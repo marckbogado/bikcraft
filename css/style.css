@@ -1,0 +1,96 @@
+/*RESETANDO ESTILOS*/
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header-bg {
+    background-color: #000000;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;/*quando diminuir a resolução irá quebrar para a linha de baixo*/
+    gap: 20px;/*quando diminuir a resolução irá criar um gap entre os elementos*/
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;/*para o container incluir o valor de padding*/
+    padding: 20px;
+    max-width: 1200px;/*para envolver o conteúdo em um container responsivo*/
+    margin-left: auto;/*para alinhar ao centro*/
+    margin-right: auto;/*para alinhar ao centro*/
+}
+
+.header-menu {
+    display: flex;
+    flex-wrap: wrap;/*quando diminuir a resolução irá quebrar para a linha de baixo*/
+    gap: 40px;
+}
+
+.header-menu a {
+    color: #ffffff;
+    display: inline-block;
+    padding: 16px 0px;/*para aumentar a área de contato do link*/
+    font-size: 18px;
+    position: relative;/*para tirar o pseudo elemnto do fluxo do menu de navegação*/
+}
+
+/*PSEUDO ELEMENTO PARA OS BOTÕES DO MENU NAV*/
+.header-menu a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0px;
+    background: #ffffff;
+    margin-top: 4px;
+    transition: 0.3s;
+    position: absolute;
+}
+
+/*PSEUDO ELEMENTO PARA OS BOTÕES DO MENU NAV*/
+.header-menu a:hover:after {
+    width: 100%;
+}
+
+
+/*RESPONSIVIDADE*/
+@media (max-width: 800px) {
+    .header-menu {
+        gap: 20px;
+    }
+
+    .header-menu a {
+        background: #111111;
+        padding: 12px 16px;
+        border-radius: 4px;
+    }
+
+    .header-menu a:hover {
+        background: #2e2e2e;
+    }
+
+    .header-menu a::after {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-menu {
+        gap: 12px;
+    }
+
+    .header-menu a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
