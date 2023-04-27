@@ -1,0 +1,18 @@
+.termos {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.termos h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.termos p + h2 {
+    margin-top: 40px;/*para todo P que vem após H2 será aplicado o esilo*/
+}
+
+.termos p {
+    margin-bottom: 24px;
+    max-width: 75ch;
+}

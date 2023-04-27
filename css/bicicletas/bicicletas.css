@@ -1,0 +1,118 @@
+.bicicletas-bg {
+    background: linear-gradient(to right, var(--cor-0) 30%, var(--cor-11) 0);
+    /*o azul inicia em 30% e o vermelho inicia em 0 (ou pode por tbm red 30%)*/
+}
+
+.bicicletas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: url(../../img/dec/top-right.svg) no-repeat top 40px right 40px;
+}
+
+.bicicletas-imagem img {
+    max-width: 100%;
+}
+
+.bicicletas-imagem{
+    position: relative;/*para posicionar o span do preço*/
+}
+
+
+.bicicletas-imagem span {
+    background: var(--cor-12);
+    display: inline-block;
+    padding:  8px 16px 8px 8px;
+    position: absolute;/*para posicionar o span do preço dentro da imagem da bicicleta*/
+    top: 20px;
+    right: 0;/*para alinhar do lado direito*/
+    border-radius: 4px 0 0 4px;
+}
+
+.bicicletas-conteudo {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-content: start;/*impede que se crie espaçamentos entre as linhas ao lado da imagem quando aumenta a resolução*/
+}
+
+.bicicletas h2, p {
+    grid-column: 1/ -1;/*para pegar de ponta a ponta no grid*/
+}
+
+.bicicletas h2 {
+    margin-bottom: 20px;
+}
+
+.bicicletas h2::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 8px;
+    background-color: var(--cor-p1);
+    margin-bottom: 8px;
+}
+
+.bicicletas p {
+    margin-bottom: 32px;
+}
+
+.bicicletas a {
+    place-self: end; /*posicionando o botão no final do grid*/
+}
+
+.bicicletas li {
+    display: flex;
+    align-items: center;
+}
+
+/*APENAS PARA ADICIONAR O ESPAÇAMENTO ENTRE AS LINHAS (MOTOR, FIBRA...)*/
+.bicicletas ul {
+    display: grid;
+    gap: 16px;
+}
+
+.bicicletas-conteudo img {
+    width: 24px;
+    margin-right: 8px;
+}
+
+
+/*RESPONSIVIDADE*/
+@media (max-width: 800px) {
+    .bicicletas-bg {
+        background: var(--cor-11);
+    }
+
+    .bicicletas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .titulo h1 {
+        font-size: 32px;
+    }
+
+    .bicicletas-conteudo {
+        grid-template-columns: 1fr;
+    }
+
+    .bicicletas-conteudo h2 {
+        font-size: 28px;
+    }
+
+    .bicicletas ul {
+        font-size: 1rem;
+        margin-bottom: 32px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bicicletas a {
+        place-self: start;
+    }
+}

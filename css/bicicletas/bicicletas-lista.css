@@ -1,0 +1,91 @@
+.bicicletas-lista {
+    padding-top: 60px;
+    padding-bottom: 120px;
+}
+
+.bicicletas-lista h2 {
+    margin-bottom: 40px;
+}
+
+.bicicletas-lista ul {
+    display: flex;
+    gap: 40px;
+    padding: 0 20px 20px 20px;
+    max-width: 1400px;
+    margin-left: auto; /*centralizando a lista*/
+    margin-right: auto; /*centralizando a lista*/
+    overflow-x: auto;/*overflow para quando o elemento estourar a tela, neste caso especificamente no eixo-x, e auto só para quando necessário*/
+}
+
+#bicicleta .bicicletas-lista ul {
+    padding: 0px 0px 20px 0px;
+}
+
+.bicicletas-lista li {
+    flex: 1;
+    min-width: 280px;
+}
+
+.bicicletas-lista a {
+    display: block;
+}
+
+.bicicletas-lista img {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.bicicletas-lista h3 {
+    margin-bottom: 8px;
+    display: flex;/*para alinhar o pseudo elemento no centro do h3*/
+    align-items: center;/*para alinhar o pseudo elemento no centro do h3*/
+}
+
+.bicicletas-lista h3::before {
+    content: "";
+    display: inline-block;
+    height: 8px;
+    width: 12px;
+    margin-right: 8px;
+    background-color: var(--cor-p1);
+    transition: width 0.2s;/*transition para o hover, especificamente no width*/
+}
+
+.bicicletas-lista a:hover h3::before {
+    width: 24px;
+}
+
+.bicicletas-lista li span {
+    padding-left: 20px;
+    /*para alinhar verticalmente com o h3, 20px pois é a soma de 12px de width + 8px de margin-rigth do pseudo elemento*/
+}
+
+
+/*RESPONSIVIDADE*/
+@media (max-width: 800px) {
+    .bicicletas-lista {
+        padding-bottom: 60px;
+    }
+
+    .bicicletas-lista h2 {
+        font-size: 48px;
+    }
+
+    .bicicletas-lista h3 {
+        font-size: 32px;
+    }
+
+    .bicicletas-lista ul {
+        gap: 20px;
+    }
+
+    .bicicletas-lista li span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .bicicletas-lista h2 {
+        font-size: 32px;
+    }
+}
