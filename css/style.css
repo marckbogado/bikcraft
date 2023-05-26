@@ -8,6 +8,7 @@
 @import 'utilidades/cores.css';
 @import 'utilidades/componentes.css';
 @import 'utilidades/formulario.css';
+@import 'utilidades/animacao.css';
 
 /*BICICLETAS*/
 @import 'bicicletas/bicicletas-lista.css';

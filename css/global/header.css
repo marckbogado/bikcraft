@@ -42,7 +42,8 @@
 }
 
 /*PSEUDO ELEMENTO PARA OS BOTÕES DO MENU NAV*/
-.header-menu a:hover:after {
+.header-menu a:hover::after,
+.header-menu a.ativo::after {
     width: 100%;
 }
 
